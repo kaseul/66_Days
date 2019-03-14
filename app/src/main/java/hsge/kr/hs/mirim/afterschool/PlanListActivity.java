@@ -64,6 +64,7 @@ public class PlanListActivity extends AppCompatActivity {
     PlanListRecyclerAdapter adapter;
 
     String goal = "";
+    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,7 +137,8 @@ public class PlanListActivity extends AppCompatActivity {
                 item.num = resultset.getInt(2);
                 if(d_day >= 0) {
                     planlists.add(item);
-                    goal += item.content + "\r\n";
+                    count++;
+                    goal += (count) + "." + item.content + "\r\n";
                 }
             }
             adapter.setPlanlists(planlists);
